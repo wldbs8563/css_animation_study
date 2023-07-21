@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>애니메이션2</title>
+    <style>
+        main .box {
+            width:100px; height:100px;
+        }
+        main .a {
+            background:pink;
+            animation:y0 2s;
+        }
+        main .b {
+            background:coral;
+            animation:fontsize 2s;
+        }
+        main .c {
+            background:greenyellow;
+            animation:ybr 5s;
+        }
+        main .d {
+            background:skyblue;
+            border-radius:50%;
+            animation:ball 5s;
+        }
+
+        /* keyframes */
+        @keyframes x500 {
+            0% {transform:translateX(0)}
+            100% {transform:translateX(500px)}
+        }
+        /* y축으로 200->0만큼 이동하는 애니메이션 */
+        @keyframes y0 {
+            0% {transform:translateY(200px)}
+            100% {transform:translateY(0)}
+        }
+        /* 50도 -> 150도로 회전하는 애니메이션 */
+        @keyframes rotate150 {
+            0% {transform:rotate(50deg)}
+            100% {transform:rotate(150deg)}
+        }
+        /* 배경색 흰색->노랑으로 변경되는 애니메이션 */
+        @keyframes fontcolor {
+            0% {color:white;}
+            100% {color:yellow;}
+        }
+        /* 글자크기 1rem->3rem으로 변경되는 애니메이션 */
+        @keyframes fontsize {
+            0% {font-size:1rem;}
+            100% {font-size:3rem;}
+        }
+        /* 배경색 노랑->빨강, 글자색 검정>흰색으로 변경되는 애니메이션 */
+        @keyframes color {
+            0% {background:yellow; color:black;}
+            100% {background:red; color:white;}
+        }
+        /* 배경색 노랑>파랑>빨강 애니메이션 */
+        @keyframes ybr {
+            0% {background:yellow;}
+            50% {background:blue;}
+            100% {background:red;}
+        }
+        @keyframes ball {
+            0% {transform:rotate(0) rotate(0);}
+            100% {transform:translateX(500px) rotate(180deg);}
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="box a">a</div>
+        <div class="box b">b</div>
+        <div class="box c">c</div>
+        <div class="box d">d</div>
+    </main>
+</body>
+</html>

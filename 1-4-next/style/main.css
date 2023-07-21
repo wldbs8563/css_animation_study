@@ -41,18 +41,30 @@ header nav > ul > li > .sub li a {}
 header nav > ul > li > .sub li a:hover {color:#ddd;}
 /*section*/
 section {}
-section .sec1 {background-image:url(../images/main_bg_01.jpg)}
-section .sec2 {background-image:url(../images/main_bg_02_3.jpg)}
-section .sec3 {background-image:url(../images/main_bg_03.jpg)}
+section .sec1 {background-image:url(../images/main_bg_01.jpg);}
+section .sec2 {
+    /* background-image:url(../images/main_bg_02_3.jpg); */
+
+}
+section .sec3 {background-image:url(../images/main_bg_03.jpg);}
 section > div {
+    background-attachment:fixed;
     background-size:cover; background-position:center;
     text-align:center; height:100vh; width:100%; 
     display:flex; flex-flow:column wrap; justify-content:center; color:#fff;
 }
 section > div:nth-child(2) {
+    background:
+    url(../images/main_bg_02_2.png),
+    url(../images/main_bg_02_4.png),
+    url(../images/main_bg_02_3.jpg);
+    background-size:
+    auto,
+    auto,
+    cover;
     background-repeat:no-repeat;
-    background-size:cover, cover;
-    background-position:40% center, center;
+    background-position:center;
+    background-attachment:scroll, scroll, fixed;
 }
 section > div h1 {
     font-family: 'Pattaya', sans-serif;
