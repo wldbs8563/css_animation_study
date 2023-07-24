@@ -10,6 +10,8 @@
         #wrap {
             width:100%; /* height:100vh; */
             background:url(images/bmw_bg.jpg);
+            background-size:cover;
+            background-position:center 200%;
             position:relative;
         }
         header {
@@ -21,18 +23,27 @@
             border-bottom:1px solid rgba(255,255,255,0.2);
             width:80%; margin:0 auto; display:flex; justify-content:space-around;
         }
-        header nav a {padding:10px 0; position:relative;}
+        header nav a {padding:10px 0; position:relative; color:#fff;}
         header nav a::after {
             content:''; display:block;
             width:100%; height:1px; background:#cae4ff;
             position:absolute; bottom:-1px;
+            transform: scaleX(0); transition:all 0.3s;
         }
-
+        header nav a:hover::after {transform:scaleX(1);}
         main {position:relative; width:1400px; height:80vh; margin:0 auto;}
         main img {
             position:absolute; left:0; bottom:100px;
+            animation:txt 1.3s ease;
         }
-
+        @keyframes txt {
+            0% {opacity:0;}
+            100% {opacity:1;}
+        }
+        @keyframes scale {
+            0% {transform:scale(0);}
+            100% {transform:scale(1);}
+        }
     </style>
     <script>
         window.onload=function(){

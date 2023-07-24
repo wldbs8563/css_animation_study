@@ -14,7 +14,7 @@
         /* design */
         .h_bg {background:#fff; position:fixed; left:0; top:0; width:100%; z-index:999;}
         .h_bg header {width:1200px; margin:0 auto;}
-        .h_bg header img {width:100%;}
+        .h_bg header img {width:100%;;}
         .slide_wrap {}
         .slide_wrap .slide_c {position:relative;}
         .slide_wrap .slide_c .slide {
@@ -23,18 +23,30 @@
             background-position:center;
             opacity:0; transition:opacity 0.5s;
         }
-        .slide_wrap .slide_c .slide1 {background-image:url(images/bg1.jpg); opacity:1}
+        .slide_wrap .slide_c .slide1 {background-image:url(images/bg1.jpg); opacity:1;
+        animation:bg_scale 2s linear both;
+        }
         .slide_wrap .slide_c .slide2 {background-image:url(images/bg2.jpg);}
         .slide_wrap .slide_c .slide3 {background-image:url(images/bg3.jpg);}
         .slide_wrap .slide_c .slide p {
             text-align:center; color:#fff;
             font-size:3rem; letter-spacing:-1px;
             position:relative; top:400px;
+            animation:txt 1s fowards;
         }
         /* class */
 
         /* animation */
-
+        @keyframes bg_scale {
+            0% {background-size:100%;}
+            100% {background-size:120%;}
+            /* scale이 아닌 background-size로 해야하는 이유 */
+            /* transform:scale은 bg뿐 아니라 자식, 자손에 크기까지 영향을 주기 때문 */
+        }
+        @keyframes txt {
+            0% {opacity:0; transform:translateY(0) scale(1);}
+            100% {opacity:1; transform:translateY(-30px) scale(1.2);}
+        }
     </style>
     <script>
         window.onload=function(){

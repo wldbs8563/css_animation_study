@@ -64,13 +64,35 @@
         main .center h1 span {font-size:3.5rem; letter-spacing:-2.5px; padding:10px 0;}
         main .center .right {
             position:relative; right:174px; top:-100px;
+            animation:left 1s linear forwards;
         }
+        main .center .right span:first-child {}
         main .center .right span {
             position:absolute; width:174px; height:174px;
         }
-        main .center .right span:nth-child(1) {}
+        main .center .right span:nth-child(1) {animation:rotate 20s linear alternate infinite;}
         main .center .right span:nth-child(2) {text-align:center; line-height:174px;}
+        main .center h1 span:first-child {
+            color:#fff;
+            animation:txt 0.2s ease forwards;
+        }
+        main .center h1 span:last-child {
+            color:#fff; opacity:0;
+            animation:txt 0.2s ease 0.5s forwards;
+        }
         /* animation */
+        @keyframes txt {
+            0% {transform:translateY(0px); opacity:0;}
+            100% {transform:translateY(-50px); opacity:1;}
+        }
+        @keyframes left {
+            0% {transform:translateX(50px); opacity:0;}
+            100% {transform:translateX(-100px); opacity:1;}
+        }
+        @keyframes rotate {
+            0% {transform:rotate(0)}
+            100% {transform:rotate(360deg);}
+        }
     </style>
 </head>
 <body>

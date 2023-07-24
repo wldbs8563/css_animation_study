@@ -13,14 +13,27 @@
         /* 1. 버튼에 마우스를 올렸을 때 target1 배경색 변경 */
         main #btn:hover + .target1 {background:pink;}
         main .target1 {transition:background 1s 0.5s;}
-        main .target2 {animation:right500 2s linear 4 reverse;}
-        main .target3 {}
-        main .target4 {}
-        main .target5 {}
+        main .target2 {animation:right500 2s linear 3 alternate both;}
+        main .target3 {animation:left_top_right 1s 3 alternate backwards;}
+        main .target4 {animation:ball 2s 3 alternate forwards; border-radius:50%;}
+        main .target5 {animation:opacity 2s;}
         /* animation + @keyframes */
         @keyframes right500 {
             0% {transform:translateX(0);}
             100% {transform:translateX(500px);}
+        }
+        @keyframes left_top_right {
+            0% {transform:translate(0,0);}
+            50% {transform:translate(300px, -100px);}
+            100% {transform:translate(600px, 0);}
+        }
+        @keyframes ball {
+            0% {transform:rotate(0);}
+            100% {transform:translate(500px) rotate(180deg);}
+        }
+        @keyframes opacity {
+            0% {opacity:0; font-size:1rem;}
+            100% {opacity:1; font-size:3rem;}
         }
         /* @keyframes  작성위치 style 맨아래 또는 외부스타일 분리 */
         /* 1. 원하는 애니메이션 시작-끝 장면 정하기 */
